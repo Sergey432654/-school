@@ -5,7 +5,9 @@ type ElementData ={
   id: number
   title: string,
   content: string,
-  picture: string
+  picture: string,
+  predmet: string,
+  name:string
 
 }
 export default function MainContent() {
@@ -19,13 +21,13 @@ export default function MainContent() {
   if (error) return <p className="text-red-500">Error fetching dat a</p>;
 
   return (
-    <div className="md:grid-cols-3 gap-4 text-white">
+    <div className="flex h-100 w-100 position:left flex-wrap gap-4 p-4">
       {data?.map((item) => (
         <div key={item.id}>
-          <h2 className="text-lg font-bold mb-2">{item.title}</h2>
-          <p className="text-sm text-gray-300">{item.content}</p>
-          <p className="text-sm text-gray-300">{item.content}</p>
-          {item.picture && (<img src={item.picture} alt="gtgwrg" className='bg-red-300'/>)}
+          <h2 className='text-xxl font-bold'>{item.title}</h2>
+          <h2 className="text-xl font-bold mb-2">Its your teacher of {item.predmet}:{item.name}</h2>
+          {item.picture && (<img src={item.picture} alt="gtgwrg" className='position: center bg-red-300'/>)}
+          <p className="text-xl text-gray-300">{item.content}</p>
         </div>
       ))}
     </div>
