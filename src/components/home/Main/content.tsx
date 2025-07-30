@@ -21,9 +21,9 @@ export default function MainContent() {
   if (error) return <p className="text-red-500">Error fetching dat a</p>;
 
   return (
-    <div className="flex h-100 w-100 position:left flex-wrap gap-4 p-4">
+    <div className="flex w-180 rounded position:left flex-wrap gap-4 p-4">
       {data?.map((item) => (
-        <div key={item.id}>
+        <div key={item.id} className=''>
           <h2 className='text-xxl font-bold'>{item.title}</h2>
           <h2 className="text-xl font-bold mb-2">Its your teacher of {item.predmet}:{item.name}</h2>
           {item.picture && (<img src={item.picture} alt="gtgwrg" className='position: center bg-red-300'/>)}
